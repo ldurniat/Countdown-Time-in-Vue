@@ -1,5 +1,10 @@
 <template>
-    <div></div>
+    <div>
+        {{ displayDays }}
+        {{ displayHours }}
+        {{ displayMinutes }}
+        {{ displaySeconds }}
+    </div>
 </template>
 
 <script setup>

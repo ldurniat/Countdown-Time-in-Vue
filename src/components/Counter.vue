@@ -32,7 +32,7 @@ let displayMinutes = 0
 let displaySeconds = 0
 </script>
 
-<style lang="scss scoped">
+<style scoped>
 .seconds {
     max-width: 60px;
 }

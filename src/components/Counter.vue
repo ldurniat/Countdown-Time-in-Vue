@@ -26,6 +26,8 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
 let displayDays    = 0
 let displayHours   = 0
 let displayMinutes = 0

@@ -38,7 +38,27 @@ const _minutes = computed( () => { return _seconds * 60 } )
 const _hours   = computed( () => { return _minutes * 60 } )
 const _days    = computed( () => { return _hours * 24 } )
 
+function showRemaining() {
+    const timer = setInterval( () => {
+        const now = new Date(2023, 4, 22, 10, 7, 8, 9)
+        const end = new Date(2023, 4, 22, 10, 10, 10, 10)
+        const distance = end.getTime() - now.getTime()
 
+        if(distance < 0) {
+            clearInterval(timer)
+            return
+        }
+
+        const days     = Math.floor(distance / _days)
+        const hours    = Math.floor((distance % _days) / _hours)
+        const minutes  = Math.floor((distance % _hours) / _minutes)
+        const seconds  = Math.floor((distance % _minutes) / _seconds)
+        displaySeconds = seconds < 10 ? '0' + seconds : seconds
+        displayMinutes = minutes < 10 ? '0' + minutes : minutes
+        displayHours   = hours < 10 ? '0' + hours : hours
+        displayDays    = days < 10 ? '0' + days : days  
+    }, 1000 )
+}
 </script>
 
 <style scoped>

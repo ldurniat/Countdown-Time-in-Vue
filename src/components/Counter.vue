@@ -34,9 +34,9 @@ let displayMinutes = ref(0)
 let displaySeconds = ref(0)
 
 const _seconds = computed( () => { return 1000 } )
-const _minutes = computed( () => { return _seconds * 60 } )
-const _hours   = computed( () => { return _minutes * 60 } )
-const _days    = computed( () => { return _hours * 24 } )
+const _minutes = computed( () => { return _seconds.value * 60 } )
+const _hours   = computed( () => { return _minutes.value * 60 } )
+const _days    = computed( () => { return _hours.value * 24 } )
 
 function showRemaining() {
     const timer = setInterval( () => {
@@ -49,10 +49,10 @@ function showRemaining() {
             return
         }
 
-        const days     = Math.floor(distance / _days)
-        const hours    = Math.floor((distance % _days) / _hours)
-        const minutes  = Math.floor((distance % _hours) / _minutes)
-        const seconds  = Math.floor((distance % _minutes) / _seconds)
+        const days     = Math.floor(distance / _days.value)
+        const hours    = Math.floor((distance % _days.value) / _hours.value)
+        const minutes  = Math.floor((distance % _hours.value) / _minutes.value)
+        const seconds  = Math.floor((distance % _minutes.value) / _seconds.value)
         displaySeconds.value = seconds < 10 ? '0' + seconds : seconds
         displayMinutes.value = minutes < 10 ? '0' + minutes : minutes
         displayHours.value   = hours < 10 ? '0' + hours : hours

@@ -53,10 +53,10 @@ function showRemaining() {
         const hours    = Math.floor((distance % _days) / _hours)
         const minutes  = Math.floor((distance % _hours) / _minutes)
         const seconds  = Math.floor((distance % _minutes) / _seconds)
-        displaySeconds = seconds < 10 ? '0' + seconds : seconds
-        displayMinutes = minutes < 10 ? '0' + minutes : minutes
-        displayHours   = hours < 10 ? '0' + hours : hours
-        displayDays    = days < 10 ? '0' + days : days  
+        displaySeconds.value = seconds < 10 ? '0' + seconds : seconds
+        displayMinutes.value = minutes < 10 ? '0' + minutes : minutes
+        displayHours.value   = hours < 10 ? '0' + hours : hours
+        displayDays.value    = days < 10 ? '0' + days : days  
     }, 1000 )
 }
 

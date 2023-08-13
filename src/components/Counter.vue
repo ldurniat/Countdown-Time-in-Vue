@@ -28,10 +28,10 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
 
-let displayDays    = 0
-let displayHours   = 0
-let displayMinutes = 0
-let displaySeconds = 0
+let displayDays    = ref(0)
+let displayHours   = ref(0)
+let displayMinutes = ref(0)
+let displaySeconds = ref(0)
 
 const _seconds = computed( () => { return 1000 } )
 const _minutes = computed( () => { return _seconds * 60 } )

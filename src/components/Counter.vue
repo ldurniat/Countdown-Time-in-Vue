@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 
 let displayDays    = 0
 let displayHours   = 0
@@ -59,6 +59,10 @@ function showRemaining() {
         displayDays    = days < 10 ? '0' + days : days  
     }, 1000 )
 }
+
+onMounted( () => {
+    showRemaining()
+} )
 </script>
 
 <style scoped>

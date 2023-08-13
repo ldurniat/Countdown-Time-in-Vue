@@ -32,6 +32,13 @@ let displayDays    = 0
 let displayHours   = 0
 let displayMinutes = 0
 let displaySeconds = 0
+
+const _seconds = computed( () => { return 1000 } )
+const _minutes = computed( () => { return _seconds * 60 } )
+const _hours   = computed( () => { return _minutes * 60 } )
+const _days    = computed( () => { return _hours * 24 } )
+
+
 </script>
 
 <style scoped>

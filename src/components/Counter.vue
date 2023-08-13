@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
 let displayDays    = 0
 let displayHours   = 0

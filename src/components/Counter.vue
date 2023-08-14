@@ -39,9 +39,10 @@ const _hours   = computed( () => { return _minutes.value * 60 } )
 const _days    = computed( () => { return _hours.value * 24 } )
 
 function showRemaining() {
+    const start = new Date()
     const timer = setInterval( () => {
-        const now = new Date(2023, 4, 22, 10, 7, 8, 9)
-        const end = new Date(2023, 4, 22, 10, 10, 10, 10)
+        const now = new Date()
+        const end = new Date(start.getTime() + 2 * _hours.value)
         const distance = end.getTime() - now.getTime()
 
         if(distance < 0) {
@@ -57,6 +58,7 @@ function showRemaining() {
         displayMinutes.value = minutes < 10 ? '0' + minutes : minutes
         displayHours.value   = hours < 10 ? '0' + hours : hours
         displayDays.value    = days < 10 ? '0' + days : days  
+        console.log(displaySeconds.value)
     }, 1000 )
 }
 

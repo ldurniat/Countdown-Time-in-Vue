@@ -38,6 +38,10 @@ const _minutes = computed( () => { return _seconds.value * 60 } )
 const _hours   = computed( () => { return _minutes.value * 60 } )
 const _days    = computed( () => { return _hours.value * 24 } )
 
+function formatNum(num) {
+    return num < 10 ? '0' + num : num
+}
+
 function showRemaining() {
     const start = new Date()
     const timer = setInterval( () => {
@@ -54,10 +58,10 @@ function showRemaining() {
         const hours    = Math.floor((distance % _days.value) / _hours.value)
         const minutes  = Math.floor((distance % _hours.value) / _minutes.value)
         const seconds  = Math.floor((distance % _minutes.value) / _seconds.value)
-        displaySeconds.value = seconds < 10 ? '0' + seconds : seconds
-        displayMinutes.value = minutes < 10 ? '0' + minutes : minutes
-        displayHours.value   = hours < 10 ? '0' + hours : hours
-        displayDays.value    = days < 10 ? '0' + days : days  
+        displaySeconds.value = formatNum(seconds)
+        displayMinutes.value = formatNum(minutes)
+        displayHours.value   = formatNum(hours)
+        displayDays.value    = formatNum(days)  
         console.log(displaySeconds.value)
     }, 1000 )
 }

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="loaded">
         <section class="text-3xl flex justify-center content-center flex-col mx-auto text-center"></section>
         <section class="flex text-6xl justify-center content-center">
             <div class="days mr-2 realtive">
@@ -34,6 +34,8 @@ let displayDays    = ref(0)
 let displayHours   = ref(0)
 let displayMinutes = ref(0)
 let displaySeconds = ref(0)
+
+const loaded = ref(false)
 
 const _seconds = computed( () => { return 1000 } )
 const _minutes = computed( () => { return _seconds.value * 60 } )
@@ -70,7 +72,9 @@ function showRemaining() {
         displaySeconds.value = formatNum(seconds)
         displayMinutes.value = formatNum(minutes)
         displayHours.value   = formatNum(hours)
-        displayDays.value    = formatNum(days)  
+        displayDays.value    = formatNum(days) 
+        
+        loaded.value = true
         console.log(displaySeconds.value)
     }, 1000 )
 }

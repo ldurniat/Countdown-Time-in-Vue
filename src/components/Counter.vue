@@ -75,7 +75,6 @@ function showRemaining() {
         displayDays.value    = formatNum(days) 
         
         loaded.value = true
-        console.log(displaySeconds.value)
     }, 1000 )
 }
 

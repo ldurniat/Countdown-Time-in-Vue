@@ -1,6 +1,9 @@
 <template>
     <div v-if="loaded">
-        <section class="text-3xl flex justify-center content-center flex-col mx-auto text-center"></section>
+        <section class="text-3xl flex justify-center content-center flex-col mx-auto text-center">
+            <h5 v-if="!expired">Buy Now</h5>
+            <h5 v-else>Timer is Done</h5>
+        </section>
         <section class="flex text-6xl justify-center content-center">
             <div class="days mr-2 realtive">
                 {{ displayDays }}
@@ -35,7 +38,8 @@ let displayHours   = ref(0)
 let displayMinutes = ref(0)
 let displaySeconds = ref(0)
 
-const loaded = ref(false)
+const loaded  = ref(false)
+const expired = ref(false) 
 
 const _seconds = computed( () => { return 1000 } )
 const _minutes = computed( () => { return _seconds.value * 60 } )
@@ -62,6 +66,7 @@ function showRemaining() {
 
         if(distance < 0) {
             clearInterval(timer)
+            expired.value = true
             return
         }
 

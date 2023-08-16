@@ -28,6 +28,8 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
 
+const props = defineProps(['year', 'month', 'date', 'hour', 'minute', 'second', 'millisecond'])
+
 let displayDays    = ref(0)
 let displayHours   = ref(0)
 let displayMinutes = ref(0)

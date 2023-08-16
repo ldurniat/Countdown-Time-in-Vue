@@ -54,11 +54,9 @@ function formatNum(num) {
 }
 
 function showRemaining() {
-    const start = new Date()
     const timer = setInterval( () => {
-        const now = new Date()
-        const end = new Date(start.getTime() + 2 * _hours.value)
-        const distance = end.getTime() - now.getTime()
+        const now      = new Date()
+        const distance = end.value.getTime() - now.getTime()
 
         if(distance < 0) {
             clearInterval(timer)

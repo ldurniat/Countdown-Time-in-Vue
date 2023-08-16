@@ -39,6 +39,15 @@ const _seconds = computed( () => { return 1000 } )
 const _minutes = computed( () => { return _seconds.value * 60 } )
 const _hours   = computed( () => { return _minutes.value * 60 } )
 const _days    = computed( () => { return _hours.value * 24 } )
+const end      = computed( () => { return new Date(
+                                                    props.year, 
+                                                    props.month, 
+                                                    props.date, 
+                                                    props.hour, 
+                                                    props.minute, 
+                                                    props.second, 
+                                                    props.millisecond
+                                                ) } )
 
 function formatNum(num) {
     return num < 10 ? '0' + num : num

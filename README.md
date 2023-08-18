@@ -2,6 +2,8 @@
 
 A simple countdown timer using JS and Vue.js 
 
+All code come from [Easiest Way To Create A Timer In JavaScript // Vue Countdown Timer in JavaScript Tutorial 2020](https://www.youtube.com/watch?v=Q_fLx2KcoYA)
+
 For learning purpose.
 
 ## Recommended IDE Setup

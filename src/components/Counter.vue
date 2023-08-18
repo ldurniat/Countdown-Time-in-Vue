@@ -31,7 +31,15 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
 
-const props = defineProps(['year', 'month', 'date', 'hour', 'minute', 'second', 'millisecond'])
+const props = defineProps({
+    year        : {type:Number, default:2028},
+    month       : {type:Number, default:0},
+    date        : {type:Number, default:1},
+    hour        : {type:Number, default:1},
+    minute      : {type:Number, default:0},
+    second      : {type:Number, default:0},
+    millisecond : {type:Number, default:0}
+})
 
 let displayDays    = ref(0)
 let displayHours   = ref(0)

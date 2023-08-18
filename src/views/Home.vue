@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h1>Hello World</h1>
         <Counter 
             :year="2024" 
             :month="3" 

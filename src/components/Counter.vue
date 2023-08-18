@@ -2,7 +2,7 @@
     <div v-if="loaded">
         <section class="text-3xl flex justify-center content-center flex-col mx-auto text-center">
             <h5 v-if="!expired">Buy Now</h5>
-            <h5 v-else>Timer is Done</h5>
+            <h5 v-else>{{props.time_out_message}}</h5>
         </section>
         <section class="flex text-6xl justify-center content-center">
             <div class="days mr-2 realtive">
@@ -32,6 +32,7 @@
 import { computed, onMounted, ref } from 'vue'
 
 const props = defineProps({
+    time_out_message : {type:String, default: "Timer is Done"},
     year        : {type:Number, default:2028},
     month       : {type:Number, default:0},
     date        : {type:Number, default:1},
